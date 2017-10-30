@@ -8,6 +8,9 @@ main()
 
 {
 
+
+printf("Igrese las cadenas de caracteres:\n Presion ctrl+d para  ir al menu\n");
+    int len;
     int max; 
     char line[MAXLINE]; 
     char longest[MAXLINE]; 
@@ -19,8 +22,26 @@ main()
             copy(longest, line);
         }
     if (max > 0) 
-  printf("\nLa cadena tiene %d caracteres\n", cuenta(longest)-1);
-  printf("\n\nLa cadena tiene %d dÃ­gitos\n", cuenta_digitos(longest));                                             }
+          
+               do {
+                    printf("\nLa cadena mas larga que escribiste es: %s", longest);
+                    printf("\n\t MenÃº: \n"
+                    "1) Contar Caracteres de la cadena mas larga \n"
+                    "2) Contar Digitos de la cadena mas larga  \n"
+                    "3) Salir \n");
+                     scanf("%d", &choice);
+                               if (choice == 1) {
+                                    printf("\nLa cadena tiene %d caracteres\n", cuenta(longest)-1);
+                                                }
+                             else if (choice == 2) {
+                               printf("\n\nLa cadena tiene %d dÃ­gitos\n", cuenta_digitos(longest));
+                                                   }
+                             else if (choice == 3) {}
+                             else {
+                                  printf("\nPOR FAVOR ELIJA UNA DE LAS 3 OPCIONES");
+                                  }
+              }while (choice != 3);
+
         
         
     return 0;
